@@ -21,6 +21,7 @@ header {
 }
 
 h2 {
+    font-size: 2.5rem;
     text-align: center;
     margin-block: 2rem;
 }
@@ -31,7 +32,8 @@ h2 {
 
 .btns {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 3em;
     width: 100vw;
 }
 
@@ -43,6 +45,7 @@ button {
     border-radius: 50%;
     transition: background 200ms ease-in;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .result {
@@ -50,13 +53,15 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .score {
+    font-size: 1.2em;
     display: flex;
-    width: 50%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
 }
 
 footer {
@@ -65,4 +70,22 @@ footer {
     padding: 0.5rem;
     width: 100vw;
     text-align: center;
+}
+
+@media (min-width: 60rem) {
+    body {
+        font-size: 32px;
+    }
+
+    button {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    button:hover {
+        background: #ffffff40;
+    }
 }
