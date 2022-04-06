@@ -8,7 +8,7 @@ body {
 }
 
 button {
-    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 header {
