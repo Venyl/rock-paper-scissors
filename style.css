@@ -7,6 +7,10 @@ body {
     color: white;
 }
 
+button {
+    outline: none;
+}
+
 header {
     width: 100%;
     background: #111;
@@ -38,8 +42,7 @@ h2 {
 }
 
 .game-btn {
-    border: 0;
-    outline: 2px solid white;
+    border: 2px solid white;
     background: none;
     padding: 1rem;
     border-radius: 50%;
