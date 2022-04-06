@@ -30,15 +30,12 @@ function update(playerEmoji) {
     enemyEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
     if (playerEmoji === burrito) {
-        console.log(1);
         playerScore += enemyEmoji === burger;
         enemyScore += enemyEmoji === hotdog;
     } else if (playerEmoji === hotdog) {
-        console.log(2);
         playerScore += enemyEmoji === burrito;
         enemyScore += enemyEmoji === burger;
     } else {
-        console.log(3);
         playerScore += enemyEmoji === hotdog;
         enemyScore += enemyEmoji === burrito;
     }
@@ -61,7 +58,7 @@ for (const elem of document.getElementsByClassName("game-btn")) {
     });
 }
 
-function endGame(playerScore) {
+function endGame() {
     modal.querySelector("h2").textContent = `You ${playerScore === 5 ? "win" : "lose"}!`;
     modal.showModal();
     document.body.classList.toggle("blur");
