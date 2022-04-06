@@ -37,7 +37,7 @@ h2 {
     width: 100vw;
 }
 
-button {
+.game-btn {
     border: 0;
     outline: 2px solid white;
     background: none;
@@ -64,6 +64,33 @@ button {
     gap: 2rem;
 }
 
+dialog {
+    font-size: 2rem;
+    padding: min(5vw, 1em) min(10vw, 2em);
+    background: #111;
+    border: 0.2rem solid white;
+    color: white;
+    text-align: center;
+    border-radius: 1em;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+.new-game-btn {
+    border-radius: 100vw;
+    padding: 0.2em 0.8em;
+    border: 0.1em solid white;
+    background: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.new-game-btn:hover {
+    background: #ffffff40;
+}
+
 footer {
     margin-top: auto;
     background: #111;
@@ -77,7 +104,7 @@ footer {
         font-size: 32px;
     }
 
-    button {
+    .game-btn {
         font-size: 3rem;
     }
 
@@ -85,7 +112,7 @@ footer {
         font-size: 3.5rem;
     }
 
-    button:hover {
+    .game-btn:hover {
         background: #ffffff40;
     }
 }

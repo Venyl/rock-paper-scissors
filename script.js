@@ -3,12 +3,26 @@ let [burrito, hotdog, burger] = emojis;
 
 let playerScore = 0;
 let enemyScore = 0;
-
-let duel = document.querySelector(".duel");
-let player = document.querySelector(".you");
-let enemy = document.querySelector(".enemy");
-
 let gameOver = false;
+
+const duel = document.querySelector(".duel");
+const player = document.querySelector(".you");
+const enemy = document.querySelector(".enemy");
+const modal = document.querySelector("dialog");
+const newGameBtn = document.querySelector(".new-game-btn");
+
+newGameBtn.addEventListener("click", () => {
+    playerScore = 0;
+    enemyScore = 0;
+    gameOver = false;
+
+    player.textContent = `You: 0`;
+    enemy.textContent = `Enemy: 0`;
+    duel.textContent = "\xa0";
+
+    modal.close();
+    document.body.classList.toggle("blur");
+});
 
 function update(playerEmoji) {
     if (gameOver) return;
@@ -33,21 +47,22 @@ function update(playerEmoji) {
     enemy.textContent = `Enemy: ${enemyScore}`;
 
     if (playerScore === 5 || enemyScore === 5) {
-        duel.textContent = `You ${playerScore === 5 ? "win" : "lose"}!`;
         gameOver = true;
-        show();
+        endGame();
         return;
     }
 
     duel.textContent = `${playerEmoji} vs ${enemyEmoji}`;
 }
 
-for (const elem of document.getElementsByTagName("button")) {
+for (const elem of document.getElementsByClassName("game-btn")) {
     elem.addEventListener("click", (e) => {
         update(e.currentTarget.textContent);
     });
 }
 
-function show() {
-    // document.querySelector("dialog").showModal();
+function endGame(playerScore) {
+    modal.querySelector("h2").textContent = `You ${playerScore === 5 ? "win" : "lose"}!`;
+    modal.showModal();
+    document.body.classList.toggle("blur");
 }
